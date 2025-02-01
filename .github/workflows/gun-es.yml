@@ -1,0 +1,37 @@
+name: Publish to GUN-ES to NPM
+
+on:
+  push:
+    tags:
+      - "v.*"
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      packages: write
+      pull-requests: write
+      issues: read
+    env:
+      NPM_CONFIG_PROVENANCE: true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the library
+        run: pnpm run build
+
+      - name: Publish gun-es
+        run: npm publish --provenance --access public
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
