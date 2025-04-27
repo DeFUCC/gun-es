@@ -25,27 +25,12 @@ jobs:
         uses: actions/setup-node@v4
 
       - name: Install dependencies
-        run: npm i
+        run: corepack enable && pnpm i
 
       - name: Build the library
-        run: npm run build
-
-      - name: Check for NODE_AUTH_TOKEN
-        run: |
-          echo "Checking for NODE_AUTH_TOKEN environment variable..."
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "NODE_AUTH_TOKEN is not set!"
-          else
-            echo "NODE_AUTH_TOKEN is set (length: ${#NODE_AUTH_TOKEN})"
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm run build
 
       - name: Publish gun-es
         run: npm publish --provenance --access public --//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
         env:
           NPM_CONFIG_PROVENANCE: true
-
-      - name: Output npm debug log
-        if: failure()
-        run: cat /home/runner/.npm/_logs/*-debug-0.log
