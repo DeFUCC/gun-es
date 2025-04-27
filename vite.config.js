@@ -11,7 +11,10 @@ export default defineConfig({
     outDir: 'dist',
     target: 'esnext',
     lib: {
-      entry: path.resolve(dirname, './index.js'),
+      entry: {
+        'gun-es': path.resolve(dirname, './index.js'),
+        'derive': path.resolve(dirname, './derive.js')
+      },
       formats: ['es'],
     },
     sourcemap: true,

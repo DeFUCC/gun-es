@@ -12,7 +12,10 @@
 		"url": "https://github.com/DeFUCC/gun-es/issues"
 	},
 	"type": "module",
-	"exports": "./dist/gun-es.js",
+	"exports": {
+		".": "./dist/gun-es.js",
+		"./derive": "./dist/derive.js"
+	},
 	"main": "./dist/gun-es.js",
 	"module": "./dist/gun-es.js",
 	"packageManager": "pnpm@9.15.4",
@@ -22,9 +25,10 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"vite": "6.0.11"
+		"vite": "6.3.3"
 	},
 	"dependencies": {
+		"@noble/curves": "1.9.0",
 		"gun": "0.2020.1240"
 	}
 }
