@@ -25,12 +25,16 @@ jobs:
         uses: actions/setup-node@v4
 
       - name: Install dependencies
-        run: corepack enable && pnpm i
+        run: npm i
 
       - name: Build the library
-        run: pnpm run build
+        run: npm run build
 
       - name: Publish gun-es
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Output npm debug log
+        if: failure()
+        run: cat /home/runner/.npm/_logs/*-debug-0.log
