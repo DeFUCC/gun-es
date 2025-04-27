@@ -4,7 +4,10 @@
 	"homepage": "https://gun-vue.js.org",
 	"author": "davay42 <davay@defucc.me>",
 	"license": "MIT",
-	"repository": "git+https://github.com/DeFUCC/gun-es.git",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DeFUCC/gun-es.git"
+	},
 	"files": [
 		"dist"
 	],

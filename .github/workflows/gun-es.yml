@@ -32,6 +32,5 @@ jobs:
 
       - name: Publish gun-es
         run: npm publish --provenance --access public
-        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
