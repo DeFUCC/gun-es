@@ -42,9 +42,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish gun-es
-        run: npm publish --provenance --access public
+        run: npm publish --provenance --access public --//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Output npm debug log
         if: failure()
