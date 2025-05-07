@@ -1,6 +1,7 @@
 {
 	"name": "@gun-vue/gun-es",
-	"version": "0.3.1240",
+	"description": "ES version of GunJS Database",
+	"version": "0.4.1240",
 	"homepage": "https://gun-vue.js.org",
 	"author": "davay42 <davay@defucc.me>",
 	"license": "MIT",
@@ -28,7 +29,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"vite": "6.3.3"
+		"vite": "6.3.5"
 	},
 	"dependencies": {
 		"@noble/curves": "1.9.0",
