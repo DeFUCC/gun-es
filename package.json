@@ -1,7 +1,7 @@
 {
-	"name": "@gun-vue/gun-es",
+	"name": "gun-es",
 	"description": "ES version of GunJS Database",
-	"version": "0.4.1240",
+	"version": "0.5.1240",
 	"homepage": "https://gun-vue.js.org",
 	"author": "davay42 <davay@defucc.me>",
 	"license": "MIT",
@@ -34,5 +34,15 @@
 	"dependencies": {
 		"@noble/curves": "1.9.0",
 		"gun": "0.2020.1240"
-	}
+	},
+	"keywords": [
+		"p2p",
+		"crdt",
+		"graph",
+		"database",
+		"gundb",
+		"cryptography",
+		"KDF",
+		"es6"
+	]
 }

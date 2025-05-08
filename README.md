@@ -9,7 +9,7 @@ For use of [GUN](https://gun.eco) in `<script type="module"></script>` environme
 Install via npm/pnpm/yarn/bun/deno.
 
 ```bash
-pnpm i @gun-vue/gun-es
+pnpm i gun-es
 ```
 
 ## How to use
@@ -17,7 +17,7 @@ pnpm i @gun-vue/gun-es
 Import Gun and SEA as module and use them.
 
 ```js
-import { Gun, SEA } from "@gun-vue/gun-es";
+import { Gun, SEA } from "gun-es";
 
 const pair = await SEA.pair();
 const gun = Gun();
@@ -31,8 +31,8 @@ Original Gun SEA (Security Encryption Authorization) doesn't provide key derivat
 Now we have a secure key derivation function for Gun. With it we can reliably generate keys from any given input. This opens many new ways for authentication and user creation. Try it!
 
 ```js
-import { Gun, SEA } from "@gun-vue/gun-es";
-import derivePair from "@gun-vue/gun-es/derive";
+import { Gun, SEA } from "gun-es";
+import derivePair from "gun-es/derive";
 
 const pair = await derivePair("password or another string", [
 	"extra",
