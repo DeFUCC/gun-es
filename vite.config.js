@@ -12,11 +12,12 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: {
-        'gun-es': path.resolve(dirname, './index.js'),
-        'derive': path.resolve(dirname, './derive.js')
+        'gun-es': path.resolve(dirname, './src/index.js'),
+        'derive': path.resolve(dirname, './src/derive.js'),
+        'min': path.resolve(dirname, './src/min.js')
       },
       formats: ['es'],
     },
-    sourcemap: true,
+    // sourcemap: true,
   },
 });

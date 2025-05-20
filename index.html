@@ -4,7 +4,7 @@
 <head>
   <title>GUN-ES test</title>
   <script type="module" async>
-    import { Gun, SEA } from './dist/gun-es.js';
+    import { Gun, SEA } from './dist/min.js';
     async function init() {
       const pair = await SEA.pair();
       const gun = Gun();
@@ -16,11 +16,25 @@
     }
     init();
 
+    import worker from "./src/worker.js?worker&inline";
+    import { useWebWorker } from "@vueuse/core";
+    import { watch } from 'vue';
+
+    const GunWorker = useWebWorker(worker, { type: 'module' });
+
+    watch(GunWorker.data, (d) => {
+      document.getElementById('worker').innerText = d
+    });
+
+    setTimeout(() => {
+      GunWorker.post('timestamp')
+    }, 1000)
+
   </script>
 </head>
 
 <body>
-  <h1>Gun Test</h1>
+  <h1>Gun ES</h1>
   <pre id="pubKey"></pre>
   <h5>Name:</h5>
   <pre id="name"></pre>
@@ -28,6 +42,8 @@
 
 </html>
 <pre id="name"></pre>
+
+<pre id="worker"></pre>
 </body>
 
 </html>
