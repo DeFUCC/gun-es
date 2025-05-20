@@ -1,7 +1,7 @@
 {
 	"name": "gun-es",
 	"description": "ES version of GunJS Database",
-	"version": "0.6.1240",
+	"version": "0.7.1240",
 	"homepage": "https://gun-vue.js.org",
 	"author": "davay42 <davay@defucc.me>",
 	"license": "MIT",
@@ -19,7 +19,7 @@
 	"exports": {
 		".": "./dist/gun-es.js",
 		"./derive": "./dist/derive.js",
-		"./mini": "./dist/min.js"
+		"./min": "./dist/min.js"
 	},
 	"main": "./dist/gun-es.js",
 	"module": "./dist/gun-es.js",
@@ -35,8 +35,8 @@
 	"dependencies": {
 		"@noble/curves": "1.9.0",
 		"@vueuse/core": "^13.2.0",
-		"vue": "^3.5.14",
-		"gun": "0.2020.1240"
+		"gun": "0.2020.1240",
+		"vue": "^3.5.14"
 	},
 	"keywords": [
 		"p2p",

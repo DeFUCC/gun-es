@@ -14,7 +14,8 @@ export default defineConfig({
       entry: {
         'gun-es': path.resolve(dirname, './src/index.js'),
         'derive': path.resolve(dirname, './src/derive.js'),
-        'min': path.resolve(dirname, './src/min.js')
+        'min': path.resolve(dirname, './src/min.js'),
+        // 'bloom': path.resolve(dirname, './src/bloom.js')
       },
       formats: ['es'],
     },

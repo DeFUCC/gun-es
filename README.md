@@ -24,6 +24,18 @@ const gun = Gun();
 gun.user().auth(pair);
 ```
 
+### No-store light-weight Min version
+
+No Radix store in IndexedDB, no Promises API, no WebRTC. Pure gun for testing and data processing.
+
+```js
+import { Gun, SEA } from "gun-es/min";
+
+const pair = await SEA.pair();
+const gun = Gun();
+gun.user().auth(pair);
+```
+
 ### Using in a Web Worker
 
 Gun is looking for `window` and `document` to work in the browser mode so we need to first mimic them in our worker environment and then load asynchronously. Such worker is still serializable and possible to build in a single HTML web-app along with main app.
@@ -36,7 +48,7 @@ let gun;
 self.window = self;
 self.document = {};
 
-import("gun-es").then(async (d) => {
+import("gun-es/min").then(async (d) => {
 	gun = d.Gun();
 	let pair = await d.SEA.pair();
 	gun.user().auth(pair);
